@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="pt-br">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="container">
+        <div class="form-box active" id="login-form">
+            <form action="">
+                <h2>Login</h2>
+                <input type="email" name="email" placeholder="email" required>
+                <input type="senha" name="senha" placeholder="senha" required>
+                <button type="enviar" name="Login">Login</button>
+                <p>Você não tem uma conta? <a href="#" onclick="showForm('registrar-form')">registrar</a></p>
+                
+               
+            </form>
+        </div>
+    </div>
+
+     <div class="container">
+        <div class="form-box" id="registrar-form">
+            <form action="">
+                <h2>Registrar</h2>
+                <input type="text" name="name" placeholder="Nome" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="senha" name="senha" placeholder="senha" required>
+                <select name="role" required>
+                    <option value="">Cliente ou Funcionário</option>
+                    <option value="user">Cliente</option>
+                    <option value="admin">Funcionário</option>
+
+               </select>
+                <button type="enviar" name="registrar">registrar</button>
+                <p>Você já possui tem uma conta? <a href="#" onclick="showForm('login-form')">Login</a></p>
+            </form>
+        </div>
+    </div>
+
+     <script src="script.js"></script>
+</body>
+</html>

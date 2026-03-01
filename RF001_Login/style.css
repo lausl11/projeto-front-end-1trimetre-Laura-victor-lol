@@ -1,0 +1,108 @@
+:root{
+    #indentidade
+    --cor-principal:rgb(55, 201, 238);
+    --cor-hover-primaria:rgb(92, 212, 242);
+
+    #estrutura
+    --cor-fundo: rgb(231, 247, 248);
+    --cor-box: rgb(248, 252, 253);
+
+    #texto
+    --cor-texto:rgb(30, 41, 59);
+}
+*{
+    margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family:Arial, Helvetica, sans-serif;
+
+}
+
+body{
+    display:flex;
+    justify-content: center;    
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient( rgb(231, 247, 248) , rgb(193, 242, 245));
+    color:var(--cor-principal);
+    font-size: 50px;
+}
+
+.container {
+    margin: 0 15px;
+    opacity: 0.8;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  animation: fadeUp 0.4s ease-out forwards;
+}
+.container:hover{
+    transform: scale(1.1);
+}
+
+.form-box{
+    width: 100%;
+    max-width: 450px;
+    padding: 14px;
+    background: var(--cor-principal);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgb(92, 212, 242);
+    display: none;
+    
+}
+
+.form-box.active{
+    display: block;
+}
+
+h2{
+    font-size: 34px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--cor-texto);
+}
+input,
+select {
+width: 100%;
+padding: 18px;
+background-color: rgb(255, 255, 255);
+border-radius: 6px;
+border: none;
+outline: none;
+font-size: 16px;
+color: var(--cor-texto);
+margin-bottom: 20px;
+}   
+
+button{
+    width: 100%;
+    padding: 16px;
+    background: var(--cor-hover-primaria);
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: white;
+    font-weight: 500;
+    margin-bottom: 20px;
+    transition: 0.25s ease;
+
+}
+button:hover{
+    background: rgb(67, 157, 179);
+    transform: scale(1.02);
+    box-shadow: 0 12px 30px rgb(39, 111, 130);
+}
+
+p{
+    font-size: 14.5px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+p a {
+color: rgb(20, 110, 146);
+text-decoration: none;
+}
+p a :hover{
+    text-decoration: underline;
+}
