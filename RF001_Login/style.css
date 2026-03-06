@@ -25,7 +25,7 @@ body{
     min-height: 100vh;
     background: linear-gradient( rgb(231, 247, 248) , rgb(193, 242, 245));
     color:var(--cor-principal);
-    font-size: 50px;
+    font-size: 55px;
 }
 
 .container {
@@ -150,6 +150,6 @@ p a :hover{
 .menu img{
     width: 40px;
     height: auto;
-    padding: 0px;
+    padding: 0;
     display: block;
 }
