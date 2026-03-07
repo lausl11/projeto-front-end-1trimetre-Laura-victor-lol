@@ -1,0 +1,68 @@
+.navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 97%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(92,212,242,0.3);
+    padding: 15px 40px;
+    backdrop-filter: blur(10px);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.menu{
+    display: flex;
+    gap: 20px;
+    font-size: 25px;
+}
+.menu a{
+    margin-left: 30px;
+    font-family: "Poppins", sans-serif;
+    text-decoration: none;
+    color: var(--cor-texto);
+    padding: 10px 18px;
+    border-radius: 12px;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.40);
+    backdrop-filter:  (6px);
+    transition: all 0.25s ease;
+    
+
+}
+.menu a:hover{
+    background: rgba(rgb(255, 255, 255), rgb(255, 255, 255), rgb(255, 255, 255), 0.55);
+    transform: scale(1.1);
+    transition: 0.25;
+}
+.logo{
+    font-size: 28px;
+    font-weight: bold;
+}
+.menu img{
+    width: 40px;
+    height: auto;
+    padding: 0;
+    display: block;
+}
+.navabout{
+    position: fixed;
+    top: 9%;
+    left: 0;
+    width: 100%;
+    background: rgba(7, 190, 236, 0.3);
+    padding: 60px 100px;
+    backdrop-filter: blur(5px);
+    font-family: "Bungee", sans-serif;
+    font-size: 50px;
+    font-weight: 400px;
+    font-style: normal;
+    text-align: center;
+}
+.slide{
+    background-image: url("https://chatgpt.com/backend-api/estuary/content?id=file_00000000dc6071f5a071423725c659c8&ts=492475&p=fs&cid=1&sig=06cb83919bd1717787ca231c11b0f5669d873792654a7780b8a9bf0ca85ebcd2&v=0");
+    position: fixed;
+    top: 9%;
+    left: 0;
+    image-rendering: auto;
+}
