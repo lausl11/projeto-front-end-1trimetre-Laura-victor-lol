@@ -1,34 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Lavanderia Cepers</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
+
 <body>
-       <nav class="navbar">
-        <div class="logo" id="pginicial" img scr="">LAVANDERIA CEPERS</div>
+    <div class="content">
+        <nav class="navbar">
+            <div class="logo" id="pginicial" img scr="">LAVANDERIA CEPERS</div>
 
-        <div class="menu">
-           <a href="#">Como Não Funciona</a>
-           <a href="#"><img src="../Imagens/carrinho.png" alt="carrinho"></a>
-           <a href="#" onclick="showForm('login-form')">Login</a>
+            <div class="menu">
+                <a href="#">Como Não Funciona</a>
+                <a href="#"><img src="../Imagens/carrinho.png" alt="carrinho"></a>
+                <a href="#" onclick="showForm('login-form')">Login</a>
+            </div>
+        </nav>
+
+        <nav class="navabout">
+            <div class="titulo">
+                <a href="#">A MAIOR LAVANDERIA DO BRASIL</a>
+        </nav>
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="3000">
+                    <img src="../Imagens/epstein.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item" data-bs-interval="3000">
+                    <img src="../Imagens/espaço.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item" data-bs-interval="3000">
+                    <img src="../Imagens/horarios.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item" data-bs-interval="3000">
+                    <img src="../Imagens/propaganda.png" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
-    </nav>
+    </div>
 
-<nav class="navabout">
-    <div class="titulo">
-        <a href="#">A MAIOR LAVANDERIA DO BRASIL</a>
-
-<div class="slide">
-    <style>
-        p {
-            background-image: url(https://chatgpt.com/backend-api/estuary/content?id=file_00000000dc6071f5a071423725c659c8&ts=492475&p=fs&cid=1&sig=06cb83919bd1717787ca231c11b0f5669d873792654a7780b8a9bf0ca85ebcd2&v=0);
-        }
-    </style>
-</div>
-</nav>
 </body>
+
 </html>
