@@ -17,20 +17,41 @@
 
 <body>
     <div class="content">
-        <nav class="navbar">
-            <div class="logo" id="pginicial" img scr="">LAVANDERIA CEPERS</div>
+     <nav class="navbar navbar-expand-lg bg-body-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"> LavanderiaCepers</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">como funciona</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Mais Informações
+          </a>
+          <ul class="dropdown-menu ">
+            <li><a class="dropdown-item" href="#">Contratos</a>
+            <li><a class="dropdown-item" href="#">configurações</a>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Sobre Nois</a>
+          </ul>
+        </li>
 
-            <div class="menu">
-                <a href="#">Como Não Funciona</a>
-                <a href="#"><img src="../Imagens/carrinho.png" alt="carrinho"></a>
-                <a href="#" onclick="showForm('login-form')">Login</a>
-            </div>
-        </nav>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="btn btn-info" type="submit">pesquisar</button>
+      </form>
+    </div>
+  </div>
+</nav>
 
-        <nav class="navabout">
-            <div class="titulo">
-                <a href="#">A MAIOR LAVANDERIA DO BRASIL</a>
-        </nav>
         <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="3000">
@@ -58,6 +79,7 @@
             </button>
         </div>
     </div>
+
 
 </body>
 
