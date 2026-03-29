@@ -23,7 +23,7 @@ body{
     justify-content: center;    
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient( rgb(231, 247, 248) , rgb(193, 242, 245));
+    background: linear-gradient( rgb(231, 247, 248) , rgb(145, 235, 240));
     color:var(--cor-principal);
     font-size: 55px;
 }

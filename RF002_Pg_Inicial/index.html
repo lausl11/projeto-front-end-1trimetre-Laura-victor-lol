@@ -16,21 +16,32 @@
 </head>
 
 <body>
-    <div class="content">
-        <nav class="navbar">
-            <div class="logo" id="pginicial" img scr="">LAVANDERIA CEPERS</div>
-
-            <div class="menu">
-                <a href="#">Como Não Funciona</a>
-                <a href="#"><img src="../Imagens/carrinho.png" alt="carrinho"></a>
-                <a href="#" onclick="showForm('login-form')">Login</a>
-            </div>
-        </nav>
-
-        <nav class="navabout">
-            <div class="titulo">
-                <a href="#">A MAIOR LAVANDERIA DO BRASIL</a>
-        </nav>
+     <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Lavanderia Cepers</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item-login">
+          <a class="nav-link active" aria-current="page" href="RF001_Login">Login</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">sobre nois</a>
+        </li>
+        
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="btn btn-outline-info" type="submit">Pesquisar</button>
+      </form>
+    </div>
+  </div>
+</nav>
         <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="3000">
@@ -58,6 +69,53 @@
             </button>
         </div>
     </div>
+
+
+    <div class="container">
+    <div class="card">
+        <div class="card-header">
+            <span class="wishlist">♡</span>
+            <img src="/Imagens/camisa.png" alt="Produto" class="product-img">
+        </div>
+        
+        <div class="card-content">
+            <h3 class="product-title">camisa</h3>
+            <p class="category">Camisas que podem ir em maquina</p>
+        </div>
+
+        <div class="card-hover-actions">
+            <div class="qty-selector">
+                <button>-</button>
+                <span>1</span>
+                <button>+</button>
+            </div>
+            <button class="btn-add">Adicionar</button>
+        </div>
+    </div>
+
+    <div class="card active-hover">
+        <div class="card-header">
+            <span class="wishlist">♡</span>
+            <img src="/Imagens/calca.jeans.png" alt="Produto" class="product-img">
+        </div>
+        
+        <div class="card-content">
+            <h3 class="product-title">Calca Jeans</h3>
+            <p class="category">Jeans em bom estado </p>
+        </div>
+
+         <div class="card-hover-actions">
+            <div class="qty-selector">
+                <button>-</button>
+                <span>1</span>
+                <button>+</button>
+            </div>
+            <button class="btn-add">Adicionar</button>
+        </div>
+    </div>
+</div>
+   
+
 
 </body>
 

@@ -1,14 +1,5 @@
-    .navbar {
-        top: 0;
-        left: 0;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background: rgba(92, 212, 242, 0.3);
-        padding: 15px 40px;
-        backdrop-filter: blur(10px);
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    body{   
+        background-color: rgb(143, 216, 224) ;
     }
 
     .menu {
@@ -50,21 +41,158 @@
         display: block;
     }
 
-    .navabout {
-        top: 9%;
-        left: 0;
-        width: 100%;
-        background: rgba(7, 190, 236, 0.3);
-        padding: 40px 100px;
-        backdrop-filter: blur(5px);
-        font-family: "Bungee", sans-serif;
-        font-size: 50px;
-        font-weight: 400px;
-        font-style: normal;
-        text-align: center;
-    }
+ 
 
     .carousel{
-        width: 69%;
+        width: 80%;
         margin: 0 auto;
+        background-color: rgb(39, 149, 157);
     }
+
+
+   /* Configuração da Grade de Cards */
+.container {
+    display: flex;
+    flex-wrap: wrap;       /* Faz os cards ficarem lado a lado e pularem linha */
+    gap: 20px;             /* Espaço entre um card e outro */
+    justify-content: center;
+    padding: 20px;
+    background-color: #f4f7f6;
+}
+
+/* O Card Individual */
+.card {
+    width: 280px;
+    height: 420px;        /* Altura fixa para todos serem iguais */
+    background: #fff;
+    border-radius: 12px;
+    padding: 15px;
+    position: relative;    /* Necessário para os botões "grudarem" no fundo */
+    overflow: hidden;      /* Esconde o que estiver fora do limite do card */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Área da Imagem */
+.card-header {
+    width: 100%;
+    height: 220px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.product-img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+/* Textos (Nome e Descrição) */
+.card-content {
+    transition: all 0.4s ease;
+}
+
+.product-title {
+    font-size: 1rem;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.product-desc {
+    font-size: 0.9rem;
+    color: #888;
+    line-height: 1.2;
+}
+
+/* Painel de Botões (O que aparece no hover) */
+.card-hover-actions {
+    position: absolute;
+    bottom: -80px;      /* Começa "escondido" abaixo do card */
+    left: 15px;
+    right: 15px;
+    height: 50px;
+    display: flex;
+    gap: 8px;
+    transition: all 0.3s ease-in-out;
+    background: #fff;   /* Fundo branco para cobrir o texto se necessário */
+}
+
+/* Estilo dos Botões */
+.qty-box {
+  display: flex;
+    align-items: center;
+    background-color: #87ceeb; /* Azul claro */
+    border-radius: 25px;       /* Deixa arredondado */
+    padding: 5px 10px;
+    height: 40px;
+}
+
+.qty-box button {
+display: flex;
+    align-items: center;
+    background-color: #87ceeb; /* Azul claro */
+    border-radius: 25px;       /* Deixa arredondado */
+    padding: 5px 10px;
+    height: 40px;
+}
+
+.qty-box span {
+    background: #fff;
+    color: #ffffff;
+    padding: 2px 10px;
+}
+
+.btn-add {
+    flex-grow: 1;
+    background: #41beb1; /* Cor verde água do seu vídeo */
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: lowercase;
+}
+.btn-add:hover{
+    color: #000000;
+    transform: scale(1.05);
+}
+
+.wishlist {
+    position: absolute;
+    top: 15px;    /* Distância do topo */
+    right: 15px;  /* Distância da direita */
+    z-index: 10;
+    cursor: pointer;
+    font-size: 20px;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.wishlist:hover {
+    color: red; /* Efeito bonitinho ao passar o mouse */
+}
+
+/* --- LÓGICA DO HOVER (IGUAL PARA TODOS OS CARDS) --- */
+
+.card:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Quando passa o mouse no card, o conteúdo sobe e os botões aparecem */
+.card:hover .card-content {
+    transform: translateY(-40px); /* Move o texto para cima */
+    opacity: 0.3;                 /* Deixa o texto clarinho para focar nos botões */
+}
+
+.card:hover .card-hover-actions {
+    bottom: 20px;                 /* Sobe os botões para a posição visível */
+}
