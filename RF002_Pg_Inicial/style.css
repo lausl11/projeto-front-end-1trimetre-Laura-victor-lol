@@ -1,198 +1,452 @@
-    body{   
-        background-color: rgb(143, 216, 224) ;
-    }
-
-    .menu {
-        display: flex;
-        gap: 20px;
-        font-size: 25px;
-    }
-
-    .menu a {
-        margin-left: 30px;
-        font-family: "Poppins", sans-serif;
-        text-decoration: none;
-        color: var(--cor-texto);
-        padding: 10px 18px;
-        border-radius: 12px;
-        font-weight: 500;
-        background: rgba(255, 255, 255, 0.40);
-        backdrop-filter: (6px);
-        transition: all 0.25s ease;
-
-
-    }
-
-    .menu a:hover {
-        background: rgba(rgb(255, 255, 255), rgb(255, 255, 255), rgb(255, 255, 255), 0.55);
-        transform: scale(1.1);
-        transition: 0.25;
-    }
-
-    .logo {
-        font-size: 28px;
-        font-weight: bold;
-    }
-
-    .menu img {
-        width: 40px;
-        height: auto;
-        padding: 0;
-        display: block;
-    }
-
- 
-
-    .carousel{
-        width: 80%;
-        margin: 0 auto;
-        background-color: rgb(39, 149, 157);
-    }
-
-
-   /* Configuração da Grade de Cards */
-.container {
-    display: flex;
-    flex-wrap: wrap;       /* Faz os cards ficarem lado a lado e pularem linha */
-    gap: 20px;             /* Espaço entre um card e outro */
-    justify-content: center;
-    padding: 20px;
-    background-color: #f4f7f6;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* O Card Individual */
-.card {
-    width: 280px;
-    height: 420px;        /* Altura fixa para todos serem iguais */
-    background: #fff;
-    border-radius: 12px;
-    padding: 15px;
-    position: relative;    /* Necessário para os botões "grudarem" no fundo */
-    overflow: hidden;      /* Esconde o que estiver fora do limite do card */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease;
-    border: 1px solid #eee;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Área da Imagem */
-.card-header {
+body {
     width: 100%;
-    height: 220px;
+    background-color: #a9f4f0;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+.navbar {
+    background-color: #0b4d67 !important;
+    padding: 15px 0;
+}
+
+.title-section {
+    width: 100vw;
+    background-color: #0b4d67;
+    padding: 40px 0;
+    border-bottom: 8px solid #41beb1;
+    display: flex;
+    justify-content: center;
+}
+
+.title-section h1 {
+    color: #aff6f2;
+    font-size: 45px;
+    margin: 0;
+}
+
+.produtos-fundo-azul {
+    width: 100vw;
+    background-color: #a9f4f0;
+    padding: 60px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    width: 90%;
+    max-width: 1200px;
+}
+
+.card {
+    flex: 1 1 300px;
+    max-width: 350px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    border: none;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.card-header-img {
+    width: 100%;
+    height: 200px;
     background-color: #f9f9f9;
-    border-radius: 8px;
+    border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 15px;
     position: relative;
+    overflow: hidden;
 }
 
 .product-img {
-    max-width: 90%;
-    max-height: 90%;
+    height: 90%;
     object-fit: contain;
 }
 
-/* Textos (Nome e Descrição) */
-.card-content {
-    transition: all 0.4s ease;
-}
-
 .product-title {
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: #333;
-    font-weight: 600;
-    margin-bottom: 5px;
+    margin-top: 15px;
+    font-weight: bold;
 }
 
 .product-desc {
     font-size: 0.9rem;
-    color: #888;
-    line-height: 1.2;
+    color: #777;
 }
 
-/* Painel de Botões (O que aparece no hover) */
 .card-hover-actions {
-    position: absolute;
-    bottom: -80px;      /* Começa "escondido" abaixo do card */
-    left: 15px;
-    right: 15px;
-    height: 50px;
+    margin-top: 20px;
     display: flex;
-    gap: 8px;
-    transition: all 0.3s ease-in-out;
-    background: #fff;   /* Fundo branco para cobrir o texto se necessário */
+    gap: 10px;
 }
 
-/* Estilo dos Botões */
-.qty-box {
-  display: flex;
+.qty-selector {
+    display: flex;
     align-items: center;
-    background-color: #87ceeb; /* Azul claro */
-    border-radius: 25px;       /* Deixa arredondado */
+    background: #e0f7fa;
+    border-radius: 20px;
     padding: 5px 10px;
-    height: 40px;
 }
 
-.qty-box button {
-display: flex;
-    align-items: center;
-    background-color: #87ceeb; /* Azul claro */
-    border-radius: 25px;       /* Deixa arredondado */
-    padding: 5px 10px;
-    height: 40px;
-}
-
-.qty-box span {
-    background: #fff;
-    color: #ffffff;
-    padding: 2px 10px;
+.qty-selector button {
+    border: none;
+    background: none;
+    padding: 0 10px;
+    font-weight: bold;
+    
 }
 
 .btn-add {
     flex-grow: 1;
-    background: #41beb1; /* Cor verde água do seu vídeo */
-    border: none;
-    border-radius: 25px;
+    background: #41beb1;
     color: white;
+    border: none;
+    border-radius: 20px;
     font-weight: bold;
-    cursor: pointer;
-    text-transform: lowercase;
+    padding: 10px;
+    transform: all 0.3 seg ease ;
 }
 .btn-add:hover{
-    color: #000000;
     transform: scale(1.05);
+    box-shadow: 0 10px 20px;
 }
 
 .wishlist {
     position: absolute;
-    top: 15px;    /* Distância do topo */
-    right: 15px;  /* Distância da direita */
-    z-index: 10;
-    cursor: pointer;
+    top: 10px;
+    right: 10px;
     font-size: 20px;
-    color: #333;
-    transition: color 0.3s;
+    cursor: pointer;
+}
+.btn-cart-list {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    transition: 0.3s;
+    cursor: pointer;
 }
 
-.wishlist:hover {
-    color: red; /* Efeito bonitinho ao passar o mouse */
+.btn-cart-list:hover {
+    color: #41beb1;
+    transform: translate(1.2);
 }
 
-/* --- LÓGICA DO HOVER (IGUAL PARA TODOS OS CARDS) --- */
-
-.card:hover {
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+#cart-count {
+    background: #41beb1;
+    color: #0b4d67;
+    padding: 0 8px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: bold;
+}
+/* 1. A ABA LATERAL (SIDEBAR) */
+.cart-sidebar {
+    position: fixed;
+    top: 15px; /* Deixando um espaço em cima para não colar no teto */
+    right: -450px;
+    width: 400px;
+    height: calc(100vh - 30px); /* Altura quase total, descontando as bordas */
+    background: #ffffff;
+    z-index: 3000;
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1); /* Animação suave */
+    
+    /* BORDAS ARREDONDADAS E SOMBRA */
+    border-radius: 30px 0 0 30px; /* Arredonda o lado esquerdo */
+    box-shadow: -15px 0 35px rgba(0, 0, 0, 0.2); 
+    
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
-/* Quando passa o mouse no card, o conteúdo sobe e os botões aparecem */
-.card:hover .card-content {
-    transform: translateY(-40px); /* Move o texto para cima */
-    opacity: 0.3;                 /* Deixa o texto clarinho para focar nos botões */
+.cart-sidebar.active {
+    right: 0;
 }
 
-.card:hover .card-hover-actions {
-    bottom: 20px;                 /* Sobe os botões para a posição visível */
+/* 2. O CABEÇALHO DO CARRINHO */
+.cart-header {
+    padding: 25px;
+    background: #0b4d67;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #41beb1;
+}
+
+.cart-header h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0;
+}
+
+#close-cart {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#close-cart:hover {
+    background: #ff4757;
+    transform: rotate(90deg);
+}
+
+/* 3. O CORPO (ITENS) */
+.cart-body {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #f8fefd; /* Um fundo bem clarinho pros itens */
+}
+
+/* ESTILO DOS ITENS DENTRO DO CARRINHO */
+.cart-item-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    padding: 15px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.cart-item-row:hover {
+    transform: translateY(-3px);
+}
+
+/* 4. O RODAPÉ (TOTAL E BOTÃO) */
+.cart-footer {
+    padding: 25px;
+    background: white;
+    border-top: 1px solid #eee;
+}
+
+.total-box {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: bold;
+    color: #0b4d67;
+    margin-bottom: 20px;
+}
+
+.btn-checkout {
+    width: 100%;
+    background: linear-gradient(135deg, #41beb1, #0b4d67);
+    color: white;
+    border: none;
+    padding: 18px;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(65, 190, 177, 0.3);
+}
+
+.btn-checkout:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(65, 190, 177, 0.4);
+}
+
+/* 5. O FOCO (OVERLAY / FUNDO ESCURO) */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(11, 77, 103, 0.6); /* Azul escuro transparente */
+    backdrop-filter: blur(5px); /* EFEITO DE DESFOQUE NO FUNDO */
+    display: none;
+    z-index: 2500;
+    transition: 0.4s;
+}
+
+.overlay.active {
+    display: block;
+}
+.btn-remove {
+    background: none;
+    border: none;
+    color: #ff4757;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 5px;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-remove:hover {
+    transform: scale(1.2);
+    color: #fd0026;
+}
+
+
+.cart-item-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    padding: 12px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.card-qty-badge {
+    background: #0b4d67;
+    color: white;
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: none; /* Começa escondido */
+}
+
+.card-qty-badge.active {
+    display: inline-block;
+}
+/* ESTILO DO RODAPÉ (FOOTER) */
+.main-footer {
+    background-color: #0b4d67; /* O mesmo azul da sua Navbar */
+    color: white;
+    padding: 60px 0 20px 0;
+    margin-top: 50px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 30px;
+}
+
+.footer-column h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #41beb1; /* Verde água para destacar os títulos */
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a, .social-icons a {
+    color: #aff6f2;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.footer-column ul li a:hover, .social-icons a:hover {
+    color: white;
+    padding-left: 5px;
+}
+
+.footer-logo {
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.email-btn {
+    display: inline-block;
+    border: 1px solid #41beb1;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.email-btn:hover {
+    background: #41beb1;
+}
+
+/* FAIXA INFERIOR */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 40px;
+    padding-top: 20px;
+    background-color: #083a4f; /* Um azul um pouco mais escuro para o chão */
+}
+
+.bottom-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: #aff6f2;
+}
+
+.pay-icons {
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.rights {
+    text-align: right;
+}
+
+/* RESPONSIVIDADE (Para celular) */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .rights {
+        text-align: center;
+        margin-top: 20px;
+    }
+    .bottom-content {
+        justify-content: center;
+    }
 }
