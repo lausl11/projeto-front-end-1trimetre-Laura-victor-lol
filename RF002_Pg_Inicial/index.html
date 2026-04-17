@@ -1,21 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-br">
 <head>
+    <meta charset="UTF-8">
     <title>Lavanderia Cepers</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-
 <body>
+<<<<<<< HEAD
      <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Lavanderia Cepers</a>
@@ -39,84 +34,182 @@
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
         <button class="btn btn-outline-info" type="submit">Pesquisar</button>
       </form>
+=======
+    <div id="side-cart" class="cart-sidebar">
+        <div class="cart-header">
+            <h2>Meu Carrinho</h2>
+            <button id="close-cart">&times;</button>
+        </div>
+        <div id="cart-items" class="cart-body">
+            <p class="empty-msg">Seu carrinho está vazio.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="total-box">
+                <span>Total:</span>
+                <span id="cart-total">R$ 0,00</span>
+            </div>
+            <button class="btn-checkout">Finalizar Compra</button>
+        </div>
+>>>>>>> 2b6bba99d0a05f9f0191b0208ca831d18c51d268
     </div>
-  </div>
-</nav>
-        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="3000">
-                    <img src="../Imagens/epstein.png" class="d-block w-100" alt="...">
+    <div id="cart-overlay" class="overlay"></div>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white fw-bold" href="#">Lavanderia Cepers</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Login</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Início</a></li>
+                    <li class="nav-item">
+                        <button id="open-cart" class="nav-link btn-cart-list" style="background:none; border:none; color:white;">
+                            🛒  <span id="cart-count">0</span>
+                        </button>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Pesquisar">
+                    <button class="btn btn-info text-white" type="submit">Pesquisar</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="3000">
+                <img src="../Imagens/epstein.png" class="d-block w-100" alt="Banner 1">
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+                <img src="../Imagens/espaço.png" class="d-block w-100" alt="Banner 2">
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+                <img src="../Imagens/horarios.png" class="d-block w-100" alt="Banner 3">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Próximo</span>
+        </button>
+    </div>
+
+    <div class="title-section">
+        <h1>Lista de produtos</h1>
+    </div>
+
+    <div class="produtos-fundo-azul">
+        <div class="cards-container">
+            <div class="card">
+                <div class="card-header-img">
+                    <span class="wishlist">♡</span>
+                    <img src="/Imagens/camisa.png" class="product-img">
                 </div>
-                <div class="carousel-item" data-bs-interval="3000">
-                    <img src="../Imagens/espaço.png" class="d-block w-100" alt="...">
+                <div class="card-content">
+                    <h3 class="product-title">Camisa</h3>
+                    <p class="product-desc">Camisas que podem ir em máquina</p>
                 </div>
-                <div class="carousel-item" data-bs-interval="3000">
-                    <img src="../Imagens/horarios.png" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item" data-bs-interval="3000">
-                    <img src="../Imagens/propaganda.png" class="d-block w-100" alt="...">
+                <div class="card-hover-actions">
+                    <div class="qty-selector">
+                        <button class="btn-qty-minus">-</button><span class="qty-value">1</span><button class="btn-qty-plus">+</button>
+                    </div>
+                    <button class="btn-add">Adicionar</button>
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-    </div>
 
-
-    <div class="container">
-    <div class="card">
-        <div class="card-header">
-            <span class="wishlist">♡</span>
-            <img src="/Imagens/camisa.png" alt="Produto" class="product-img">
-        </div>
-        
-        <div class="card-content">
-            <h3 class="product-title">camisa</h3>
-            <p class="category">Camisas que podem ir em maquina</p>
-        </div>
-
-        <div class="card-hover-actions">
-            <div class="qty-selector">
-                <button>-</button>
-                <span>1</span>
-                <button>+</button>
+            <div class="card">
+                <div class="card-header-img">
+                    <span class="wishlist">♡</span>
+                    <img src="/Imagens/calca.jeans.png" class="product-img">
+                </div>
+                <div class="card-content">
+                    <h3 class="product-title">Calça Jeans</h3>
+                    <p class="product-desc">Jeans em bom estado</p>
+                </div>
+                <div class="card-hover-actions">
+                    <div class="qty-selector">
+                        <button class="btn-qty-minus">-</button><span class="qty-value">1</span><button class="btn-qty-plus">+</button>
+                    </div>
+                    <button class="btn-add">Adicionar</button>
+                </div>
             </div>
-            <button class="btn-add">Adicionar</button>
-        </div>
-    </div>
 
-    <div class="card active-hover">
-        <div class="card-header">
-            <span class="wishlist">♡</span>
-            <img src="/Imagens/calca.jeans.png" alt="Produto" class="product-img">
-        </div>
-        
-        <div class="card-content">
-            <h3 class="product-title">Calca Jeans</h3>
-            <p class="category">Jeans em bom estado </p>
-        </div>
-
-         <div class="card-hover-actions">
-            <div class="qty-selector">
-                <button>-</button>
-                <span>1</span>
-                <button>+</button>
+            <div class="card">
+                <div class="card-header-img">
+                    <span class="wishlist">♡</span>
+                    <img src="/Imagens/meia.png" class="product-img">
+                </div>
+                <div class="card-content">
+                    <h3 class="product-title">Meias</h3>
+                    <p class="product-desc">Meias não tão velhas</p>
+                </div>
+                <div class="card-hover-actions">
+                    <div class="qty-selector">
+                        <button class="btn-qty-minus">-</button><span class="qty-value">1</span><button class="btn-qty-plus">+</button>
+                    </div>
+                    <button class="btn-add">Adicionar</button>
+                </div>
             </div>
-            <button class="btn-add">Adicionar</button>
         </div>
     </div>
-</div>
-   
 
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>REDES SOCIAIS</h3>
+                <div class="social-icons">
+                    <a href="#">Instagram</a>
+                    <a href="#">Facebook</a>
+                    <a href="#">TikTok</a>
+                </div>
+                <h2 class="footer-logo">LAVANDERIA CEPERS</h2>
+            </div>
 
+            <div class="footer-column">
+                <h3>INSTITUCIONAL</h3>
+                <ul>
+                    <li><a href="#">Conheça nossa história</a></li>
+                    <li><a href="#">Trabalhe Conosco</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>DÚVIDAS</h3>
+                <ul>
+                    <li><a href="#">Perguntas frequentes</a></li>
+                    <li><a href="#">Políticas de privacidade</a></li>
+                    <li><a href="#">Termos e Condições</a></li>
+                    <li><a href="#">Licenciamento</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>FALE CONOSCO</h3>
+                <p>Dúvidas ou sugestões? Entre em contato!</p>
+                <p>lavanderia.cepers@gamil.com</p>
+                <p class="horario">Atendimento: Seg à Sex das 06h às 18h</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="bottom-content">
+                <div class="payments">
+                    <span>FORMAS DE PAGAMENTO:</span>
+                    <span class="pay-icons">💳 💵 📑</span>
+                </div>
+                <div class="rights">
+                    <p>© 2026 - Lavanderia Cepers LTDA | CNPJ 00.000.000/0001-00</p>
+                    <p>Endereço: Rua da Lavanderia, 123 - Curitiba, PR</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
-
 </html>
