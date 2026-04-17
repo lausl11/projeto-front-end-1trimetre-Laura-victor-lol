@@ -13,14 +13,17 @@
     
     <div class="container">
         <div class="form-box active" id="login-form">
-            <form action="">
-                <h2>Login</h2>
-                <input type="email" name="email" placeholder="email" required>
-                <input type="senha" name="senha" placeholder="senha" required>
-                <button type="enviar" name="Login">Login</button>
-                <p>Você não tem uma conta? <a href="#" onclick="showForm('registrar-form')">registrar</a></p>
-                
-               
+           <form action="">
+  <h2>Login</h2>
+  <input type="Email" name="Email" placeholder="Email" required>
+  <input type="password" name="Senha" placeholder="Senha" required>
+  <button type="submit" name="Login">Login</button>
+  <p>Você não tem uma conta? <a href="#" onclick="showForm('registrar-form')">Registrar</a></p>
+  
+  <!-- ✅ adicione isso aqui -->
+  <p id="mensagem-erro" style="display:none; color:red; text-align:center;">
+    Email ou senha incorretos!
+  </p>
             </form>
         </div>
     </div>
@@ -29,16 +32,16 @@
         <div class="form-box" id="registrar-form">
             <form action="">
                 <h2>Registrar</h2>
-                <input type="text" name="name" placeholder="Nome" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <input type="senha" name="senha" placeholder="senha" required>
+                <input type="text" name="Name" placeholder="Nome" required>
+                <input type="Email" name="Email" placeholder="Email" required>
+                <input type="password" name="Senha" placeholder="Senha" required>
                 <select name="role" required>
                     <option value="">Cliente ou Funcionário</option>
                     <option value="user">Cliente</option>
                     <option value="admin">Funcionário</option>
 
                </select>
-                <button type="enviar" name="registrar">registrar</button>
+                <button type="submit" name="registrar">Registrar</button>
                 <p>Você já possui tem uma conta? <a href="#" onclick="showForm('login-form')">Login</a></p>
             </form>
         </div>
@@ -48,12 +51,20 @@
         <div class="logo" id="pginicial" img scr="">LAVANDERIA CEPERS</div>
 
         <div class="menu">
-           <a href="#">Como Não Funciona</a>
+           <a href="#">Como Funciona</a>
            <a href="#"><img src="../Imagens/carrinho.png" alt="carrinho"></a>
            <a href="#" onclick="showForm('login-form')">Login</a>
         </div>
     </nav>
    
      <script src="script.js"></script>
+
+<div class="background">
+  <img src="login.logo.png" class="logo l1">
+  <img src="login.logo.png" class="logo l2">
+  <img src="login.logo.png" class="logo l3">
+</div>
+
+</div>
 </body>
 </html>
