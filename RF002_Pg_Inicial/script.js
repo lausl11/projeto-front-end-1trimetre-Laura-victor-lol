@@ -117,16 +117,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const totalMoney = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
         cartTotal.innerText = `R$ ${totalMoney.toFixed(2)}`;
-
-       
-const btnCheckout = document.querySelector('.btn-checkout');
-btnCheckout.onclick = () => {
-    if(cart.length > 0) {
-        localStorage.setItem('carrinhoCepers', JSON.stringify(cart));
-        window.location.href = "http://127.0.0.1:5500/RF003_Pedido_online";
-    } else {
-        alert("Seu carrinho está vazio!");
-    }
-};
     }
 });
