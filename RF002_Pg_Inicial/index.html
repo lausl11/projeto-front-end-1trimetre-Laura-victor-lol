@@ -11,8 +11,22 @@
 </head>
 <body>
 
-    </div>
     <div id="cart-overlay" class="overlay"></div>
+
+    <div id="side-cart" class="cart-sidebar">
+        <div class="cart-header">
+            <h2>Meu Carrinho</h2>
+            <button id="close-cart">&times;</button>
+        </div>
+        <div id="cart-items" class="cart-body"></div>
+        <div class="cart-footer">
+            <div class="total-box">
+                <span>Total:</span>
+                <span id="cart-total">R$ 0,00</span>
+            </div>
+            <button class="btn-checkout">Finalizar Pedido</button>
+        </div>
+    </div>
 
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
@@ -22,8 +36,8 @@
                     <li class="nav-item"><a class="nav-link text-white" href="#">Login</a></li>
                     <li class="nav-item"><a class="nav-link text-white" href="#">Início</a></li>
                     <li class="nav-item">
-                        <button id="open-cart" class="nav-link btn-cart-list" style="background:none; border:none; color:white;">
-                            🛒  <span id="cart-count">0</span>
+                        <button id="open-cart" class="btn-cart-list" style="background:none; border:none; color:white;">
+                            🛒 <span id="cart-count">0</span>
                         </button>
                     </li>
                 </ul>
@@ -65,6 +79,7 @@
         <div class="cards-container">
             <div class="card">
                 <div class="card-header-img">
+                    <span class="card-qty-badge"></span>
                     <span class="wishlist">♡</span>
                     <img src="/Imagens/camisa.png" class="product-img">
                 </div>
@@ -74,7 +89,9 @@
                 </div>
                 <div class="card-hover-actions">
                     <div class="qty-selector">
-                        <button class="btn-qty-minus">-</button><span class="qty-value">1</span><button class="btn-qty-plus">+</button>
+                        <button class="btn-qty-minus">-</button>
+                        <span class="qty-value">1</span>
+                        <button class="btn-qty-plus">+</button>
                     </div>
                     <button class="btn-add">Adicionar</button>
                 </div>
@@ -82,6 +99,7 @@
 
             <div class="card">
                 <div class="card-header-img">
+                    <span class="card-qty-badge"></span>
                     <span class="wishlist">♡</span>
                     <img src="/Imagens/calca.jeans.png" class="product-img">
                 </div>
@@ -91,7 +109,9 @@
                 </div>
                 <div class="card-hover-actions">
                     <div class="qty-selector">
-                        <button class="btn-qty-minus">-</button><span class="qty-value">1</span><button class="btn-qty-plus">+</button>
+                        <button class="btn-qty-minus">-</button>
+                        <span class="qty-value">1</span>
+                        <button class="btn-qty-plus">+</button>
                     </div>
                     <button class="btn-add">Adicionar</button>
                 </div>
@@ -99,6 +119,7 @@
 
             <div class="card">
                 <div class="card-header-img">
+                    <span class="card-qty-badge"></span>
                     <span class="wishlist">♡</span>
                     <img src="/Imagens/meia.png" class="product-img">
                 </div>
@@ -108,7 +129,9 @@
                 </div>
                 <div class="card-hover-actions">
                     <div class="qty-selector">
-                        <button class="btn-qty-minus">-</button><span class="qty-value">1</span><button class="btn-qty-plus">+</button>
+                        <button class="btn-qty-minus">-</button>
+                        <span class="qty-value">1</span>
+                        <button class="btn-qty-plus">+</button>
                     </div>
                     <button class="btn-add">Adicionar</button>
                 </div>
@@ -127,7 +150,6 @@
                 </div>
                 <h2 class="footer-logo">LAVANDERIA CEPERS</h2>
             </div>
-
             <div class="footer-column">
                 <h3>INSTITUCIONAL</h3>
                 <ul>
@@ -136,7 +158,6 @@
                     <li><a href="#">Blog</a></li>
                 </ul>
             </div>
-
             <div class="footer-column">
                 <h3>DÚVIDAS</h3>
                 <ul>
@@ -146,7 +167,6 @@
                     <li><a href="#">Licenciamento</a></li>
                 </ul>
             </div>
-
             <div class="footer-column">
                 <h3>FALE CONOSCO</h3>
                 <p>Dúvidas ou sugestões? Entre em contato!</p>
@@ -154,7 +174,6 @@
                 <p class="horario">Atendimento: Seg à Sex das 06h às 18h</p>
             </div>
         </div>
-
         <div class="footer-bottom">
             <div class="bottom-content">
                 <div class="payments">

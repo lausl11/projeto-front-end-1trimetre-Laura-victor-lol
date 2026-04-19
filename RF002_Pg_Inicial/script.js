@@ -18,27 +18,50 @@ document.addEventListener('DOMContentLoaded', () => {
     if(closeCartBtn) closeCartBtn.onclick = toggleCart;
     if(overlay) overlay.onclick = toggleCart;
 
-    document.querySelectorAll('.btn-add').forEach(button => {
-        button.onclick = function() {
-            const card = this.closest('.card');
-            const title = card.querySelector('.product-title').innerText;
-            const img = card.querySelector('.product-img').src;
-            
-            const existingItem = cart.find(item => item.title === title);
+    document.querySelectorAll('.card').forEach(card => {
+        const btnMinus = card.querySelector('.btn-qty-minus');
+        const btnPlus = card.querySelector('.btn-qty-plus');
+        const qtyDisplay = card.querySelector('.qty-value');
+        const btnAdd = card.querySelector('.btn-add');
 
-            if (existingItem) {
-                existingItem.quantity += 1;
-            } else {
-                cart.push({
-                    id: Date.now(),
-                    title: title,
-                    img: img,
-                    price: 25.00,
-                    quantity: 1
-                });
-            }
-            updateUI();
-        };
+        if(btnPlus) {
+            btnPlus.onclick = () => {
+                let val = parseInt(qtyDisplay.innerText);
+                qtyDisplay.innerText = val + 1;
+            };
+        }
+
+        if(btnMinus) {
+            btnMinus.onclick = () => {
+                let val = parseInt(qtyDisplay.innerText);
+                if(val > 1) qtyDisplay.innerText = val - 1;
+            };
+        }
+
+        if(btnAdd) {
+            btnAdd.onclick = () => {
+                const title = card.querySelector('.product-title').innerText;
+                const img = card.querySelector('.product-img').src;
+                const quantityToAdd = parseInt(qtyDisplay.innerText);
+                
+                const existingItem = cart.find(item => item.title === title);
+
+                if (existingItem) {
+                    existingItem.quantity += quantityToAdd;
+                } else {
+                    cart.push({
+                        id: Date.now(),
+                        title: title,
+                        img: img,
+                        price: 25.00,
+                        quantity: quantityToAdd
+                    });
+                }
+
+                qtyDisplay.innerText = "1";
+                updateUI();
+            };
+        }
     });
 
     window.removeFromCart = function(id) {
@@ -56,11 +79,9 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     function updateUI() {
-        // 1. Atualiza contador da Nav
         const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
         cartCount.innerText = totalItems;
         
-        // 2. Atualiza os crachás (badges) nos cards da página principal
         document.querySelectorAll('.card').forEach(card => {
             const title = card.querySelector('.product-title').innerText;
             const badge = card.querySelector('.card-qty-badge');
@@ -74,7 +95,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // 3. Renderiza itens na aba lateral
         if (cart.length === 0) {
             cartItemsWrapper.innerHTML = '<p style="text-align:center; color:#888; margin-top:20px;">Vazio...</p>';
         } else {
@@ -97,5 +117,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const totalMoney = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
         cartTotal.innerText = `R$ ${totalMoney.toFixed(2)}`;
+
+       
+const btnCheckout = document.querySelector('.btn-checkout');
+btnCheckout.onclick = () => {
+    if(cart.length > 0) {
+        localStorage.setItem('carrinhoCepers', JSON.stringify(cart));
+        window.location.href = "http://127.0.0.1:5500/RF003_Pedido_online";
+    } else {
+        alert("Seu carrinho está vazio!");
+    }
+};
     }
 });
