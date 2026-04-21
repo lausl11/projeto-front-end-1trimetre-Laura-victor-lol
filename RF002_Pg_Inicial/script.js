@@ -118,4 +118,73 @@ document.addEventListener('DOMContentLoaded', () => {
         const totalMoney = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
         cartTotal.innerText = `R$ ${totalMoney.toFixed(2)}`;
     }
+
+    const checkoutbtn = document.querySelector('.btn-checkout') ;
+    if (checkoutbtn) {
+        const checkoutbtn = document.querySelector('.btn-checkout');
+
+if (checkoutbtn) {
+    checkoutbtn.onclick = () => {
+        if (cart.length === 0) {
+            alert("Seu carrinho está vazio");
+            return;
+        }
+
+        // Salva o carrinho no navegador para não perder os dados ao trocar de página
+        localStorage.setItem('carrinhoCepers', JSON.stringify(cart));
+
+        // NAVEGAÇÃO: Sai da pasta RF002 e entra na RF003
+        // ../ volta um nível na pasta | RF003... entra na pasta | index.html abre o arquivo
+        window.location.href = "../RF003_Pedido_online/index.html";
+    };
+}
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Recupera o carrinho que veio da RF002
+    let cart = JSON.parse(localStorage.getItem('carrinhoCepers')) || [];
+    const btnEnviar = document.getElementById('btn-send-whatsapp'); // Use o ID do seu botão
+
+    if (btnEnviar) {
+        btnEnviar.onclick = () => {
+            // Coleta de dados do formulário
+            const nome = document.getElementById('client-name').value;
+            const endereco = document.getElementById('client-address').value;
+            const pagamento = document.getElementById('payment-method').value;
+
+            if (!nome || !endereco) {
+                alert("Por favor, preencha todos os campos!");
+                return;
+            }
+
+            // --- PARTE 1: PREPARANDO PARA O FUNCIONÁRIO (Futuro) ---
+            // Criamos um objeto de pedido completo
+            const novoPedido = {
+                id: Date.now(), // Gera um ID único baseado no tempo
+                cliente: nome,
+                endereco: endereco,
+                pagamento: pagamento,
+                itens: cart,
+                total: cart.reduce((acc, item) => acc + (item.price * item.quantity), 0) + 5,
+                status: "Pendente",
+                data: new Date().toLocaleString()
+            };
+
+            // Salva na lista global de pedidos para o funcionário ver depois
+            let pedidosExistentes = JSON.parse(localStorage.getItem('todosPedidosCepers')) || [];
+            pedidosExistentes.push(novoPedido);
+            localStorage.setItem('todosPedidosCepers', JSON.stringify(pedidosExistentes));
+
+            // --- PARTE 2: AVISO E RETORNO ---
+            alert("✅ Pedido enviado com sucesso!");
+
+            // Limpa o carrinho atual para a próxima compra
+            localStorage.removeItem('carrinhoCepers');
+
+            // Volta para a loja (Página Inicial RF002)
+            window.location.href = "../RF002_Pg_Inicial/index.html";
+        };
+    }
+});
+        
+    }
+    
 });

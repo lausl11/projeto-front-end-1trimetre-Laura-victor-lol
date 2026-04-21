@@ -52,4 +52,23 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = "../RF002_Pg_Inicial/index.html";
         };
     }
+    // Dentro do clique do botão de enviar na RF003:
+const novoPedido = {
+    id: Date.now(),
+    cliente: document.getElementById('client-name').value,
+    endereco: document.getElementById('client-address').value,
+    pagamento: document.getElementById('payment-method').value,
+    itens: cart, // Aqui já tem titulo, preço, quantidade e a FOTO (img)
+    total: cart.reduce((acc, item) => acc + (item.price * item.quantity), 0) + 5,
+    status: "Preparando", // Status inicial que você pediu
+    data: new Date().toLocaleString()
+};
+
+// Salva na "gaveta" de todos os pedidos
+let pedidosExistentes = JSON.parse(localStorage.getItem('todosPedidosCepers')) || [];
+pedidosExistentes.push(novoPedido);
+localStorage.setItem('todosPedidosCepers', JSON.stringify(pedidosExistentes));
+
+alert("Pedido enviado com sucesso! Você será redirecionado para seus pedidos.");
+window.location.href = "../RF005_consulta_pedido/index.html";
 });
