@@ -16,7 +16,6 @@ body {
     font-weight: 500;
 }
 
-/* Estilo para a barra de rolagem se tiver muitos pedidos */
 ::-webkit-scrollbar {
     width: 8px;
 }

@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalTxt = document.getElementById('total-final');
     const form = document.getElementById('final-form');
 
-    // Recupera o que foi salvo na página anterior
     const dados = localStorage.getItem('carrinhoCepers');
 
     if (!dados) {
@@ -16,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const carrinho = JSON.parse(dados);
     let soma = 0;
 
-    // Limpa e preenche a lista
     lista.innerHTML = "";
     carrinho.forEach(item => {
         const valor = item.price * item.quantity;
@@ -34,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     subtotalTxt.innerText = `R$ ${soma.toFixed(2)}`;
     totalTxt.innerText = `R$ ${(soma + taxa).toFixed(2)}`;
 
-    // Envio do formulário
+
     if (form) {
         form.onsubmit = (e) => {
             e.preventDefault();
@@ -48,23 +46,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
             alert(`Sucesso! Pedido de ${pedido.total} enviado para ${pedido.cliente}`);
             
-            localStorage.removeItem('carrinhoCepers'); // Limpa o carrinho após finalizar
+            localStorage.removeItem('carrinhoCepers'); 
             window.location.href = "../RF002_Pg_Inicial/index.html";
         };
     }
-    // Dentro do clique do botão de enviar na RF003:
+    
 const novoPedido = {
     id: Date.now(),
     cliente: document.getElementById('client-name').value,
     endereco: document.getElementById('client-address').value,
     pagamento: document.getElementById('payment-method').value,
-    itens: cart, // Aqui já tem titulo, preço, quantidade e a FOTO (img)
+    itens: cart, 
     total: cart.reduce((acc, item) => acc + (item.price * item.quantity), 0) + 5,
-    status: "Preparando", // Status inicial que você pediu
+    status: "Preparando", 
     data: new Date().toLocaleString()
 };
 
-// Salva na "gaveta" de todos os pedidos
+
 let pedidosExistentes = JSON.parse(localStorage.getItem('todosPedidosCepers')) || [];
 pedidosExistentes.push(novoPedido);
 localStorage.setItem('todosPedidosCepers', JSON.stringify(pedidosExistentes));
