@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Finalizar Pedido - Lavanderia Cepers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="checkout-wrapper">
+        <div class="checkout-box">
+            <h1>Finalizar Pedido</h1>
+            
+            <div class="order-summary-box">
+                <h3>Resumo do Pedido</h3>
+                <div id="items-list">
+                    </div>
+                <div class="divider"></div>
+                <div class="summary-line">
+                    <span>Subtotal:</span>
+                    <span id="subtotal-val">R$ 0,00</span>
+                </div>
+                <div class="summary-line">
+                    <span>Taxa de Entrega:</span>
+                    <span>R$ 5,00</span>
+                </div>
+                <div class="summary-line total-line">
+                    <span>Total:</span>
+                    <span id="total-final">R$ 0,00</span>
+                </div>
+            </div>
+
+            <form id="final-form">
+                <div class="field">
+                    <label>Nome Completo</label>
+                    <input type="text" id="nome" required placeholder="Ex: Maria Silva">
+                </div>
+
+                <div class="field">
+                    <label>Endereço de Entrega/Coleta</label>
+                    <input type="text" id="endereco" required placeholder="Rua, Número, Bairro">
+                </div>
+
+                <div class="field">
+                    <label>numero do cartao</label>
+                    <input type="tel" id="cartao" required placeholder="0000000000000000">
+                </div>
+
+                <div class="field">
+                    <label>Forma de Pagamento</label>
+                    <select id="pagamento" required>
+                        <option value="" disabled selected>Escolha o pagamento</option>
+                        <option value="Pix">Pix</option>
+                        <option value="Cartão">Cartão (na entrega)</option>
+                        <option value="Dinheiro">a bunda</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-send">Enviar Pedido</button>
+                <a href="../RF002_Pg_Inicial/index.html" class="link-voltar">Voltar para a loja</a>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
