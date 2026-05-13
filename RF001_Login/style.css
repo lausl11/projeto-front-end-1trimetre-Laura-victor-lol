@@ -1,13 +1,39 @@
-:root {
-  #indentidade --cor-principal: rgb(55, 201, 238);
-  --cor-hover-primaria: rgb(92, 212, 242);
-
-  #estrutura --cor-fundo: rgb(231, 247, 248);
-  --cor-box: rgb(248, 252, 253);
-
-  #texto --cor-texto: rgb(30, 41, 59);
+.nav-acess {
+  margin: -25%;
+  padding: 14px;
+  font-size: 40px;;
+  color: rgb(255, 255, 255);
+    width: 100%;
+    max-width: 450px;
+    padding: 14px;
+    background: var(--cor-principal);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgb(80, 204, 235);
+    display: flex;
+    
 }
 
+:root {
+  /* Identidade */
+  --cor-principal: rgb(70, 153, 173);
+  --cor-hover-primaria: rgb(0, 204, 255);
+
+  /* Estrutura */
+  --cor-fundo: rgb(231, 247, 248);
+  --cor-box: rgb(248, 252, 253);
+
+  /* Texto */
+  --cor-texto: rgb(255, 255, 255);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
 * {
   margin: 0;
   padding: 0%;
@@ -16,14 +42,15 @@
 
 }
 
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: linear-gradient(rgb(231, 247, 248), rgb(193, 242, 245));
-  color: var(--cor-principal);
-  font-size: 50px;
+body{
+    display:flex;
+    justify-content: center;   
+
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient( rgb(255, 255, 255) , rgb(102, 158, 190));
+    color:var(--cor-principal);
+    font-size: 50px;
 }
 
 .container {
@@ -37,17 +64,17 @@ body {
   transform: scale(1.1);
 }
 
-.form-box {
-  width: 100%;
-  max-width: 450px;
-  padding: 14px;
-  background: var(--cor-principal);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgb(92, 212, 242);
-  display: none;
-
+.form-box{
+    width: 100%;
+    max-width: 450px;
+    padding: 14px;
+    background: var(--cor-principal);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgb(80, 204, 235);
+    display: none;
+    
 }
 
 .form-box.active {
@@ -63,15 +90,35 @@ h2 {
 
 input,
 select {
-  width: 100%;
-  padding: 18px;
-  background-color: rgb(255, 255, 255);
-  border-radius: 6px;
-  border: none;
-  outline: none;
-  font-size: 16px;
-  color: var(--cor-texto);
-  margin-bottom: 20px;
+width: 100%;
+padding: 18px;
+background-color: #ced0e0;
+border-radius: 6px;
+border: none;
+outline: none;
+font-size: 16px;
+color: var(--cor-texto);
+margin-bottom: 20px;
+}   
+
+button{
+    width: 100%;
+    padding: 16px;
+    background: rgb(42, 154, 182);
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    margin-bottom: 20px;
+    transition: 0.25s ease;
+
+}
+button:hover{
+    background: rgb(67, 157, 179);
+    transform: scale(1.02);
+    box-shadow: 0 12px 30px rgb(6, 29, 36);
 }
 
 button {
@@ -82,7 +129,7 @@ button {
   border: none;
   cursor: pointer;
   font-size: 18px;
-  color: white;
+  color: rgb(255, 255, 255);
   font-weight: 500;
   margin-bottom: 20px;
   transition: 0.25s ease;
@@ -105,176 +152,6 @@ p a {
   color: rgb(20, 110, 146);
   text-decoration: none;
 }
-
-p a :hover {
-  text-decoration: underline;
-}
-
-HEAD
-
-/* Faz a página inteira ser o fundo */
-body {
-  margin: 0;
-  overflow: hidden;
-  /* evita scrollbar durante animação */
-}
-
-.background {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  /* fica atrás do card de login */
-}
-
-/* estilo geral */
-.logo {
-  position: absolute;
-  width: 80px;
-  opacity: 0.15;
-  filter: blur(1px);
-}
-
-/* Animação de canto a canto — diagonal */
-@keyframes moveDiagonal {
-  0% {
-    transform: translate(0, 0);
-  }
-
-  100% {
-    transform: translate(100vw, -100vh);
-  }
-}
-
-/* Cada logo começa num ponto diferente da borda inferior/esquerda */
-.l1 {
-  left: 0%;
-  top: 90%;
-  animation: moveDiagonal 20s linear infinite;
-}
-
-.l2 {
-  left: 10%;
-  top: 95%;
-  animation: moveDiagonal 22s linear infinite;
-}
-
-.l3 {
-  left: 20%;
-  top: 85%;
-  animation: moveDiagonal 18s linear infinite;
-}
-
-.l4 {
-  left: 30%;
-  top: 100%;
-  animation: moveDiagonal 25s linear infinite;
-}
-
-.l5 {
-  left: 0%;
-  top: 70%;
-  animation: moveDiagonal 21s linear infinite;
-}
-
-.l6 {
-  left: 5%;
-  top: 80%;
-  animation: moveDiagonal 23s linear infinite;
-}
-
-.l7 {
-  left: 15%;
-  top: 60%;
-  animation: moveDiagonal 19s linear infinite;
-}
-
-.l8 {
-  left: 25%;
-  top: 75%;
-  animation: moveDiagonal 24s linear infinite;
-}
-
-.l9 {
-  left: 35%;
-  top: 55%;
-  animation: moveDiagonal 20s linear infinite;
-}
-
-.l10 {
-  left: 40%;
-  top: 65%;
-  animation: moveDiagonal 22s linear infinite;
-}
-
-.l11 {
-  left: 50%;
-  top: 90%;
-  animation: moveDiagonal 17s linear infinite;
-}
-
-.l12 {
-  left: 60%;
-  top: 80%;
-  animation: moveDiagonal 26s linear infinite;
-}
-
-
-/* animações */
-@keyframes moveUp {
-  from {
-    transform: translateY(0);
-  }
-
-  to {
-    transform: translateY(-120vh);
-  }
-}
-
-@keyframes moveDown {
-  from {
-    transform: translateY(0);
-  }
-
-  to {
-    transform: translateY(120vh);
-  }
-}
-
-@keyframes moveRight {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(120vw);
-  }
-}
-
-@keyframes moveLeft {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-120vw);
-  }
-}
-
-@keyframes moveDiagonal {
-  from {
-    transform: translate(0, 0);
-  }
-
-  to {
-    transform: translate(100vw, -120vh);
-  }
-}
-
-.login-card {
-  position: relative;
-  z-index: 1;
-  /* fica na frente dos logos */
+p a :hover{
+    text-decoration: underline;
 }
