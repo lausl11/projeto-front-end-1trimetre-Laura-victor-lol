@@ -1,126 +1,132 @@
-:root{
-    #indentidade
-    --cor-principal:rgb(55, 201, 238);
-    --cor-hover-primaria:rgb(92, 212, 242);
+:root {
+  #indentidade --cor-principal: rgb(55, 201, 238);
+  --cor-hover-primaria: rgb(92, 212, 242);
 
-    #estrutura
-    --cor-fundo: rgb(231, 247, 248);
-    --cor-box: rgb(248, 252, 253);
+  #estrutura --cor-fundo: rgb(231, 247, 248);
+  --cor-box: rgb(248, 252, 253);
 
-    #texto
-    --cor-texto:rgb(30, 41, 59);
+  #texto --cor-texto: rgb(30, 41, 59);
 }
-*{
-    margin: 0;
-    padding: 0%;
-    box-sizing: border-box;
-    font-family:Arial, Helvetica, sans-serif;
+
+* {
+  margin: 0;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 
 }
 
-body{
-    display:flex;
-    justify-content: center;    
-    align-items: center;
-    min-height: 100vh;
-    background: linear-gradient( rgb(231, 247, 248) , rgb(193, 242, 245));
-    color:var(--cor-principal);
-    font-size: 50px;
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(rgb(231, 247, 248), rgb(193, 242, 245));
+  color: var(--cor-principal);
+  font-size: 50px;
 }
 
 .container {
-    margin: 0 15px;
-    opacity: 0.8;
+  margin: 0 15px;
+  opacity: 0.8;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   animation: fadeUp 0.4s ease-out forwards;
 }
-.container:hover{
-    transform: scale(1.1);
+
+.container:hover {
+  transform: scale(1.1);
 }
 
-.form-box{
-    width: 100%;
-    max-width: 450px;
-    padding: 14px;
-    background: var(--cor-principal);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgb(92, 212, 242);
-    display: none;
-    
+.form-box {
+  width: 100%;
+  max-width: 450px;
+  padding: 14px;
+  background: var(--cor-principal);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgb(92, 212, 242);
+  display: none;
+
 }
 
-.form-box.active{
-    display: block;
+.form-box.active {
+  display: block;
 }
 
-h2{
-    font-size: 34px;
-    text-align: center;
-    margin-bottom: 20px;
-    color: var(--cor-texto);
+h2 {
+  font-size: 34px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--cor-texto);
 }
+
 input,
 select {
-width: 100%;
-padding: 18px;
-background-color: rgb(255, 255, 255);
-border-radius: 6px;
-border: none;
-outline: none;
-font-size: 16px;
-color: var(--cor-texto);
-margin-bottom: 20px;
-}   
-
-button{
-    width: 100%;
-    padding: 16px;
-    background: var(--cor-hover-primaria);
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-    font-size: 18px;
-    color: white;
-    font-weight: 500;
-    margin-bottom: 20px;
-    transition: 0.25s ease;
-
-}
-button:hover{
-    background: rgb(67, 157, 179);
-    transform: scale(1.02);
-    box-shadow: 0 12px 30px rgb(39, 111, 130);
+  width: 100%;
+  padding: 18px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: var(--cor-texto);
+  margin-bottom: 20px;
 }
 
-p{
-    font-size: 14.5px;
-    text-align: center;
-    margin-bottom: 10px;
+button {
+  width: 100%;
+  padding: 16px;
+  background: var(--cor-hover-primaria);
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: white;
+  font-weight: 500;
+  margin-bottom: 20px;
+  transition: 0.25s ease;
+
 }
+
+button:hover {
+  background: rgb(67, 157, 179);
+  transform: scale(1.02);
+  box-shadow: 0 12px 30px rgb(39, 111, 130);
+}
+
+p {
+  font-size: 14.5px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
 p a {
-color: rgb(20, 110, 146);
-text-decoration: none;
+  color: rgb(20, 110, 146);
+  text-decoration: none;
 }
-p a :hover{
-    text-decoration: underline;
-}
-<<<<<<< HEAD
-/* inicio */
-=======
 
->>>>>>> d14959d252837f8c564ac3aa2d7b01aef277ed9d
+p a :hover {
+  text-decoration: underline;
+}
+
+HEAD
+
+/* Faz a página inteira ser o fundo */
 body {
   margin: 0;
   overflow: hidden;
+  /* evita scrollbar durante animação */
 }
 
 .background {
   position: fixed;
-  width:120%;
-  height: 120%;
-  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  /* fica atrás do card de login */
 }
 
 /* estilo geral */
@@ -131,104 +137,144 @@ body {
   filter: blur(1px);
 }
 
-/* posições iniciais + animação */
+/* Animação de canto a canto — diagonal */
+@keyframes moveDiagonal {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(100vw, -100vh);
+  }
+}
+
+/* Cada logo começa num ponto diferente da borda inferior/esquerda */
 .l1 {
-        left: 0%;
-        right: 100%;
-        top: 100%;
-        animation: moveDiagonal 24s linear infinite;
+  left: 0%;
+  top: 90%;
+  animation: moveDiagonal 20s linear infinite;
 }
+
 .l2 {
-        left: 10%;
-        right: 120%;
-        top: 90%;
-        animation: moveDiagonal 24s linear infinite;
+  left: 10%;
+  top: 95%;
+  animation: moveDiagonal 22s linear infinite;
 }
+
 .l3 {
-        left: 20%;
-        right: 140%;
-        top: 80%;
-        animation: moveDiagonal 24s linear infinite;
+  left: 20%;
+  top: 85%;
+  animation: moveDiagonal 18s linear infinite;
 }
+
 .l4 {
-        left: 30%;
-        right: 130%;
-        top: 70%;
-        animation: moveDiagonal 24s linear infinite;
+  left: 30%;
+  top: 100%;
+  animation: moveDiagonal 25s linear infinite;
 }
+
 .l5 {
-        left: 40%;
-        right: 140%;
-        top: 60%;
-        animation: moveDiagonal 24s linear infinite;
+  left: 0%;
+  top: 70%;
+  animation: moveDiagonal 21s linear infinite;
 }
+
 .l6 {
-        left: 50%;
-        right: 150%;
-        top: 50%;
-        animation: moveDiagonal 24s linear infinite;
+  left: 5%;
+  top: 80%;
+  animation: moveDiagonal 23s linear infinite;
 }
+
 .l7 {
-        left: 60%;
-        right: 160%;
-        top: 40%;
-        animation: moveDiagonal 24s linear infinite;
+  left: 15%;
+  top: 60%;
+  animation: moveDiagonal 19s linear infinite;
 }
+
 .l8 {
-        left: 70%;
-        right: 135%;
-        top: 30%;
-        animation: moveDiagonal 24s linear infinite;
+  left: 25%;
+  top: 75%;
+  animation: moveDiagonal 24s linear infinite;
 }
+
 .l9 {
-        left: 80%;
-        right: 180%;
-        top: 20%;
-        animation: moveDiagonal 24s linear infinite;
+  left: 35%;
+  top: 55%;
+  animation: moveDiagonal 20s linear infinite;
 }
+
 .l10 {
-        left: 90%;
-        right: 190%;
-        top: 10%;
-        animation: moveDiagonal 24s linear infinite;
+  left: 40%;
+  top: 65%;
+  animation: moveDiagonal 22s linear infinite;
 }
+
 .l11 {
-        left: -10%;
-        right: 110%;
-        top: 110%;
-        animation: moveDiagonal 24s linear infinite;
+  left: 50%;
+  top: 90%;
+  animation: moveDiagonal 17s linear infinite;
 }
+
 .l12 {
-        left: -20%;
-        right: 120%;
-        top: 120%;
-        animation: moveDiagonal 24s linear infinite;
+  left: 60%;
+  top: 80%;
+  animation: moveDiagonal 26s linear infinite;
 }
 
 
 /* animações */
 @keyframes moveUp {
-  from { transform: translateY(0); }
-  to { transform: translateY(-120vh); }
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-120vh);
+  }
 }
 
 @keyframes moveDown {
-  from { transform: translateY(0); }
-  to { transform: translateY(120vh); }
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(120vh);
+  }
 }
 
 @keyframes moveRight {
-  from { transform: translateX(0); }
-  to { transform: translateX(120vw); }
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(120vw);
+  }
 }
 
 @keyframes moveLeft {
-  from { transform: translateX(0); }
-  to { transform: translateX(-120vw); }
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-120vw);
+  }
 }
 
 @keyframes moveDiagonal {
-  from { transform: translate(0, 0); }
-  to { transform: translate(100vw, -120vh); }
+  from {
+    transform: translate(0, 0);
+  }
+
+  to {
+    transform: translate(100vw, -120vh);
+  }
 }
-=======
+
+.login-card {
+  position: relative;
+  z-index: 1;
+  /* fica na frente dos logos */
+}
